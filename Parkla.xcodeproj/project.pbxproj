@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AEE03F32D072A52A25C613AA /* Pods_Parkla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3479B9CFDD266E6DF9C6B558 /* Pods_Parkla.framework */; };
 		B636F66B221D9E11009A05F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B636F66A221D9E11009A05F1 /* AppDelegate.swift */; };
 		B636F66D221D9E11009A05F1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B636F66C221D9E11009A05F1 /* MapViewController.swift */; };
 		B636F66F221D9E11009A05F1 /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B636F66E221D9E11009A05F1 /* FavouriteViewController.swift */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3479B9CFDD266E6DF9C6B558 /* Pods_Parkla.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parkla.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB21CD2205AB0FA6C09D6DAD /* Pods-Parkla.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parkla.release.xcconfig"; path = "Pods/Target Support Files/Pods-Parkla/Pods-Parkla.release.xcconfig"; sourceTree = "<group>"; };
 		B636F667221D9E11009A05F1 /* Parkla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parkla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B636F66A221D9E11009A05F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B636F66C221D9E11009A05F1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +31,7 @@
 		B636F678221D9E12009A05F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B636F67F221DA361009A05F1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B66778D7221DDFCB00AFB633 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		CDC4A7174CEFB212903ACC4F /* Pods-Parkla.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parkla.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Parkla/Pods-Parkla.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,18 +40,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				B636F680221DA361009A05F1 /* CoreLocation.framework in Frameworks */,
+				AEE03F32D072A52A25C613AA /* Pods_Parkla.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2089863AFC34311EC6194EBE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CDC4A7174CEFB212903ACC4F /* Pods-Parkla.debug.xcconfig */,
+				AB21CD2205AB0FA6C09D6DAD /* Pods-Parkla.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B636F65E221D9E11009A05F1 = {
 			isa = PBXGroup;
 			children = (
 				B636F669221D9E11009A05F1 /* Parkla */,
 				B636F668221D9E11009A05F1 /* Products */,
 				B636F67E221DA360009A05F1 /* Frameworks */,
+				2089863AFC34311EC6194EBE /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				B636F67F221DA361009A05F1 /* CoreLocation.framework */,
+				3479B9CFDD266E6DF9C6B558 /* Pods_Parkla.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -89,9 +105,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B636F67B221D9E12009A05F1 /* Build configuration list for PBXNativeTarget "Parkla" */;
 			buildPhases = (
+				AEC8EE0DEEA736E8389ABDED /* [CP] Check Pods Manifest.lock */,
 				B636F663221D9E11009A05F1 /* Sources */,
 				B636F664221D9E11009A05F1 /* Frameworks */,
 				B636F665221D9E11009A05F1 /* Resources */,
+				BE233FFD2F9D90BAADD3EA5E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -147,6 +165,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AEC8EE0DEEA736E8389ABDED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Parkla-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE233FFD2F9D90BAADD3EA5E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Parkla/Pods-Parkla-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Parkla/Pods-Parkla-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B636F663221D9E11009A05F1 /* Sources */ = {
@@ -300,6 +367,7 @@
 		};
 		B636F67C221D9E12009A05F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDC4A7174CEFB212903ACC4F /* Pods-Parkla.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -318,6 +386,7 @@
 		};
 		B636F67D221D9E12009A05F1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB21CD2205AB0FA6C09D6DAD /* Pods-Parkla.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
