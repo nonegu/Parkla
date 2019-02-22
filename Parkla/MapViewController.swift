@@ -9,11 +9,13 @@
 import UIKit
 import MapKit
 import CoreLocation
+import RealmSwift
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
+    var realm = try! Realm()
     var locationManager = CLLocationManager()
-    var locations = [Location]()
+    var locations: Results<Location>!
 
     @IBOutlet weak var pinSegment: UISegmentedControl!
     
@@ -28,6 +30,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadAnnotations()
         // Do any additional setup after loading the view, typically from a nib.
         
     }
@@ -82,6 +85,19 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
     }
     
+    func loadAnnotations() {
+        
+        locations = realm.objects(Location.self)
+        
+        for location in locations {
+            
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+            annotation.title = location.title
+            mapView.addAnnotation(annotation)
+        }
+    }
+    
     func addAnnotation(at coordinate: CLLocationCoordinate2D) {
         
         let annotation = MKPointAnnotation()
@@ -112,8 +128,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 }
                 
                 annotation.title = annotationTitle
-                self.locations.append(Location(latitude: coordinate.latitude, longitude: coordinate.longitude, title: annotation.title ?? "", date: Date()))
-                print(self.locations)
+                self.saveRealm(at: coordinate, title: annotationTitle)
+                
             }
             
         }
@@ -133,6 +149,28 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }
         
     }
-
+    
+    func saveRealm(at coordinate: CLLocationCoordinate2D, title: String) {
+        
+        let location = Location()
+        location.latitude = coordinate.latitude
+        location.longitude = coordinate.longitude
+        location.title = title
+        location.date = Date()
+        
+        do {
+            let realm = try Realm()
+            try realm.write {
+                realm.add(location)
+            }
+        } catch {
+                print("Error initialising new realm, \(error)")
+        }
+            
+    }
+        
+        
 }
+
+
 

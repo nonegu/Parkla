@@ -56,6 +56,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B62DC1A122201BB0000633E6 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				B66778D7221DDFCB00AFB633 /* Location.swift */,
+			);
+			path = "Data Model";
+			sourceTree = "<group>";
+		};
 		B636F65E221D9E11009A05F1 = {
 			isa = PBXGroup;
 			children = (
@@ -80,7 +88,7 @@
 				B636F66A221D9E11009A05F1 /* AppDelegate.swift */,
 				B636F66C221D9E11009A05F1 /* MapViewController.swift */,
 				B636F66E221D9E11009A05F1 /* FavouriteViewController.swift */,
-				B66778D7221DDFCB00AFB633 /* Location.swift */,
+				B62DC1A122201BB0000633E6 /* Data Model */,
 				B636F670221D9E11009A05F1 /* Main.storyboard */,
 				B636F673221D9E12009A05F1 /* Assets.xcassets */,
 				B636F675221D9E12009A05F1 /* LaunchScreen.storyboard */,
