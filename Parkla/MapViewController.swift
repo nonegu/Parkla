@@ -13,10 +13,12 @@ import RealmSwift
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
+    var annotationExist: Bool = false
     var realm = try! Realm()
     var locationManager = CLLocationManager()
     var locations: Results<Location>!
-
+    var annotationTitle = ""
+    
     @IBOutlet weak var pinSegment: UISegmentedControl!
     
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
@@ -37,6 +39,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     override func viewDidAppear(_ animated: Bool) {
         
+        annotationExist = false
+        annotationTitle = ""
         //longpress recognizer to add annotations
         let uilpgr = UILongPressGestureRecognizer(target: self, action: #selector(MapViewController.longpress(gestureRecognizer:)))
         
@@ -106,7 +110,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         mapView.addAnnotation(annotation)
         
-        var annotationTitle = ""
         let annotationLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
 
         CLGeocoder().reverseGeocodeLocation(annotationLocation) { (placemarks, error) in
@@ -118,22 +121,31 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 if let placemark = placemarks?[0] {
                     
                     if placemark.subThoroughfare != nil {
-                        annotationTitle += placemark.subThoroughfare! + " "
+                        self.annotationTitle += placemark.subThoroughfare! + " "
                     }
                     
                     if placemark.thoroughfare != nil {
-                        annotationTitle += placemark.thoroughfare!
+                        self.annotationTitle += placemark.thoroughfare!
                     }
                     
                 }
                 
-                annotation.title = annotationTitle
-                self.saveRealm(at: coordinate, title: annotationTitle)
+                annotation.title = self.annotationTitle
+                self.saveRealm(at: coordinate, title: self.annotationTitle)
                 
             }
             
         }
         
+    }
+    
+    func removeSpecificAnnotation() {
+        for annotation in self.mapView.annotations {
+            if let title = annotation.title, title == annotationTitle {
+                self.mapView.removeAnnotation(annotation)
+                deleteRealm(at: annotation.coordinate, title: annotationTitle)
+            }
+        }
     }
     
     @objc func longpress(gestureRecognizer: UIGestureRecognizer) {
@@ -144,7 +156,15 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             
             let newCoordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
             
-            addAnnotation(at: newCoordinate)
+            if annotationExist {
+                print(annotationTitle)
+                removeSpecificAnnotation()
+                annotationTitle = ""
+                addAnnotation(at: newCoordinate)
+            } else {
+                addAnnotation(at: newCoordinate)
+                annotationExist = true
+            }
             
         }
         
@@ -167,6 +187,21 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 print("Error initialising new realm, \(error)")
         }
             
+    }
+    
+    func deleteRealm(at coordinate: CLLocationCoordinate2D, title: String) {
+        
+        let locationToDelete = realm.objects(Location.self).filter("title = %@", title)
+        
+        do {
+            let realm = try Realm()
+            try realm.write {
+                realm.delete(locationToDelete)
+            }
+        } catch {
+            print("Error deleting realm, \(error)")
+        }
+        
     }
         
         
