@@ -10,7 +10,7 @@
 		AEE03F32D072A52A25C613AA /* Pods_Parkla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3479B9CFDD266E6DF9C6B558 /* Pods_Parkla.framework */; };
 		B636F66B221D9E11009A05F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B636F66A221D9E11009A05F1 /* AppDelegate.swift */; };
 		B636F66D221D9E11009A05F1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B636F66C221D9E11009A05F1 /* MapViewController.swift */; };
-		B636F66F221D9E11009A05F1 /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B636F66E221D9E11009A05F1 /* FavouriteViewController.swift */; };
+		B636F66F221D9E11009A05F1 /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B636F66E221D9E11009A05F1 /* FavoriteTableViewController.swift */; };
 		B636F672221D9E11009A05F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B636F670221D9E11009A05F1 /* Main.storyboard */; };
 		B636F674221D9E12009A05F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B636F673221D9E12009A05F1 /* Assets.xcassets */; };
 		B636F677221D9E12009A05F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B636F675221D9E12009A05F1 /* LaunchScreen.storyboard */; };
@@ -24,7 +24,7 @@
 		B636F667221D9E11009A05F1 /* Parkla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parkla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B636F66A221D9E11009A05F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B636F66C221D9E11009A05F1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		B636F66E221D9E11009A05F1 /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
+		B636F66E221D9E11009A05F1 /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
 		B636F671221D9E11009A05F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B636F673221D9E12009A05F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B636F676221D9E12009A05F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 			children = (
 				B636F66A221D9E11009A05F1 /* AppDelegate.swift */,
 				B636F66C221D9E11009A05F1 /* MapViewController.swift */,
-				B636F66E221D9E11009A05F1 /* FavouriteViewController.swift */,
+				B636F66E221D9E11009A05F1 /* FavoriteTableViewController.swift */,
 				B62DC1A122201BB0000633E6 /* Data Model */,
 				B636F670221D9E11009A05F1 /* Main.storyboard */,
 				B636F673221D9E12009A05F1 /* Assets.xcassets */,
@@ -228,7 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B636F66F221D9E11009A05F1 /* FavouriteViewController.swift in Sources */,
+				B636F66F221D9E11009A05F1 /* FavoriteTableViewController.swift in Sources */,
 				B636F66B221D9E11009A05F1 /* AppDelegate.swift in Sources */,
 				B66778D8221DDFCB00AFB633 /* Location.swift in Sources */,
 				B636F66D221D9E11009A05F1 /* MapViewController.swift in Sources */,

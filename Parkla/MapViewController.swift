@@ -39,6 +39,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     override func viewDidAppear(_ animated: Bool) {
         
+        mapView.removeAnnotations(mapView.annotations)
+        loadAnnotations()
         annotationExist = false
         annotationTitle = ""
         //longpress recognizer to add annotations
