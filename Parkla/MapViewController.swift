@@ -87,7 +87,15 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     // MARK: a function to change the annonations to be shown on the map
     func updateAnnotations(for segment: Int) {
         
-        print(segment)
+        if segment == 0 {
+            
+            loadAnnotations()
+            
+        } else {
+            
+            mapView.removeAnnotations(mapView.annotations)
+            
+        }
         
     }
     

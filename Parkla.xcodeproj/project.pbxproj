@@ -16,6 +16,8 @@
 		B636F677221D9E12009A05F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B636F675221D9E12009A05F1 /* LaunchScreen.storyboard */; };
 		B636F680221DA361009A05F1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B636F67F221DA361009A05F1 /* CoreLocation.framework */; };
 		B66778D8221DDFCB00AFB633 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66778D7221DDFCB00AFB633 /* Location.swift */; };
+		B6A195C5222569D8001F8B10 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A195C4222569D8001F8B10 /* ProfileViewController.swift */; };
+		B6A195C92225719F001F8B10 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A195C82225719F001F8B10 /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		B636F678221D9E12009A05F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B636F67F221DA361009A05F1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B66778D7221DDFCB00AFB633 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		B6A195C4222569D8001F8B10 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		B6A195C82225719F001F8B10 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		CDC4A7174CEFB212903ACC4F /* Pods-Parkla.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parkla.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Parkla/Pods-Parkla.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +97,8 @@
 				B636F673221D9E12009A05F1 /* Assets.xcassets */,
 				B636F675221D9E12009A05F1 /* LaunchScreen.storyboard */,
 				B636F678221D9E12009A05F1 /* Info.plist */,
+				B6A195C4222569D8001F8B10 /* ProfileViewController.swift */,
+				B6A195C82225719F001F8B10 /* AboutViewController.swift */,
 			);
 			path = Parkla;
 			sourceTree = "<group>";
@@ -228,8 +234,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6A195C92225719F001F8B10 /* AboutViewController.swift in Sources */,
 				B636F66F221D9E11009A05F1 /* FavoriteTableViewController.swift in Sources */,
 				B636F66B221D9E11009A05F1 /* AppDelegate.swift in Sources */,
+				B6A195C5222569D8001F8B10 /* ProfileViewController.swift in Sources */,
 				B66778D8221DDFCB00AFB633 /* Location.swift in Sources */,
 				B636F66D221D9E11009A05F1 /* MapViewController.swift in Sources */,
 			);
