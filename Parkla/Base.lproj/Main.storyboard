@@ -21,11 +21,24 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tpx-wB-yhF">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6d-SR-lrG">
+                                <rect key="frame" x="364" y="763" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="hzI-oz-9df"/>
+                                    <constraint firstAttribute="width" constant="50" id="ncA-q5-aVq"/>
+                                </constraints>
+                                <state key="normal" image="nav-icon"/>
+                                <connections>
+                                    <action selector="currentLocationPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="vIb-Qy-Qdl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="E6d-SR-lrG" firstAttribute="trailing" secondItem="tpx-wB-yhF" secondAttribute="trailing" id="M9x-0r-frK"/>
                             <constraint firstItem="tpx-wB-yhF" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="MxU-Rx-Xyh"/>
                             <constraint firstItem="tpx-wB-yhF" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="gS3-AP-CP6"/>
+                            <constraint firstItem="E6d-SR-lrG" firstAttribute="bottom" secondItem="tpx-wB-yhF" secondAttribute="bottom" id="he0-BZ-l1h"/>
                             <constraint firstItem="tpx-wB-yhF" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="j2H-zc-h0t"/>
                             <constraint firstItem="tpx-wB-yhF" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="v4u-KW-h9D"/>
                         </constraints>
@@ -33,7 +46,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="CKa-g6-Vgf">
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" selectedSegmentIndex="0" id="x12-1N-GMs">
-                            <rect key="frame" x="90.666666666666686" y="7" width="233" height="30"/>
+                            <rect key="frame" x="90.5" y="7" width="233" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Show Favorites"/>
@@ -52,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1689" y="-333"/>
+            <point key="canvasLocation" x="1688.4057971014495" y="-333.48214285714283"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="wg7-f3-ORb">
@@ -194,15 +207,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSd-ow-zRV">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSd-ow-zRV">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CSd-ow-zRV" firstAttribute="top" secondItem="soA-iu-agv" secondAttribute="top" id="Bg1-eO-GDr"/>
+                            <constraint firstItem="CSd-ow-zRV" firstAttribute="trailing" secondItem="soA-iu-agv" secondAttribute="trailing" id="CmU-Zc-YG1"/>
+                            <constraint firstItem="CSd-ow-zRV" firstAttribute="bottom" secondItem="soA-iu-agv" secondAttribute="bottom" id="KjT-rv-26d"/>
+                            <constraint firstItem="CSd-ow-zRV" firstAttribute="leading" secondItem="soA-iu-agv" secondAttribute="leading" id="Vu5-Q7-xo4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="soA-iu-agv"/>
                     </view>
                     <connections>
@@ -211,7 +229,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hGZ-R7-CpV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3309.5999999999999" y="358.4707646176912"/>
+            <point key="canvasLocation" x="3308.6956521739135" y="358.25892857142856"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -281,6 +299,7 @@
     </scenes>
     <resources>
         <image name="map" width="25" height="25"/>
+        <image name="nav-icon" width="33" height="33"/>
         <image name="under-construction" width="801" height="720"/>
     </resources>
     <inferredMetricsTieBreakers>

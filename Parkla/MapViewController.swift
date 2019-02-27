@@ -29,6 +29,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     @IBOutlet weak var mapView: MKMapView!
     
+    @IBAction func currentLocationPressed(_ sender: UIButton) {
+    
+        locationManager.requestLocation()
+    
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -81,6 +87,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        let alert = UIAlertController(title: "Unable to receive your location", message: "Please make sure, you allowed this app to obtain your location", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: false)
         print("location could not be received \(error)")
     }
     
